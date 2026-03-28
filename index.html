@@ -19,6 +19,9 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
 
+    <!-- SWIPER CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <!-- CSS principal da página -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -66,32 +69,39 @@
 
             <!-- Imagem da Seção Hero -->
             <figure class="hero-image">
-                <img src="./assets/img/foto_dev_woman.svg" alt="Foto da autora do site" class="float-animation">
+                <img src="./assets/img/dev-avatar.png" alt="Foto da autora do site" class="float-animation">
             </figure>
         </section>
 
         <!-- Seção About -->
         <section id="about" class="section-container about-container">
-
-            <!-- Imagem da Seção About -->
+                    <!-- Imagem da Seção About -->
             <figure class="about-image">
-                <img src="./assets/img/avatar_dev_woman.svg" alt="Foto do perfil da autora do site">
+                <img id="about-avatar" src="" alt="">
             </figure>
 
             <!-- Conteúdo da Seção About -->
             <article class="about-content">
                 <h2>Sobre mim</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Blanditiis aliquam perferendis possimus commodi amet,
-                    odio recusandae quae expedita eius provident harum facilis
-                    adipisci doloribus. Laborum, eligendi fugiat.
-                    Officia, sed illo!</p>
+<div class="code-container">
+    <div class="code-header"></div>
+    <pre><code><span class="keyword">const</span> <span class="variable">profile</span> = {
+    <span class="property">firstName</span>: <span class="string">'Jeaninny'</span>,
+    <span class="property">lastName</span>: <span class="string">'Teixeira'</span>,
+    <span class="property">role</span>: <span class="string">'Desenvolvedora Full-Stack Júnior'</span>,
+    <span class="property">skills</span>: [<span class="string">'JavaScript'</span>, <span class="string">'TypeScript'</span>, <span class="string">'Java'</span>, <span class="string">'Node.js'</span>, <span class="string">'NestJS'</span>],
+    <span class="property">tools</span>: [<span class="string">'Git'</span>, <span class="string">'GitHub'</span>, <span class="string">'Insomnia'</span>],
+    <span class="property">certifications</span>: [<span class="string">'AWS Cloud Practitioner'</span>],
+    <span class="property">softSkills</span>: [<span class="string">'Trabalho em equipe'</span>, <span class="string">'Comunicação'</span>],
+    <span class="property">languages</span>: [<span class="string">'Inglês'</span>, <span class="string">'Francês'</span>]
+};</code></pre>
+</div>
 
                 <!-- Links (GitHub + Currículo) e Dados do GitHub -->
                 <div class="about-buttons-data">
                     <!-- Links -->
                     <div class="buttons-container">
-                        <a href="#" target="_blank" class="botao">GitHub</a>
+                        <a id="about-github" target="_blank" class="botao">GitHub</a>
                         <a href="#" target="_blank" class="botao-outline">Currículo</a>
                     </div>
 
@@ -99,18 +109,18 @@
                     <div class="data-container">
                         <!-- Seguidores -->
                         <div class="data-item">
-                            <span class="data-number">100</span>
+                            <span id="followers" class="data-number"></span>
                             <span class="data-label">Seguidores</span>
                         </div>
                         <!-- Repositórios Públicos -->
                         <div class="data-item">
-                            <span class="data-number">10</span>
+                            <span id="repos" class="data-number"></span>
                             <span class="data-label">Repositórios</span>
                         </div>
                     </div>
 
                 </div>
-            </article>
+            </article>            
         </section>
 
         <!-- Seção Projects -->
@@ -120,39 +130,6 @@
             <!-- Swiper Container -->
             <div class="swiper projects-swiper">
                 <div class="swiper-wrapper">
-                    <figure class="swiper-slide">
-                        <article class="project-card">
-
-                            <!-- Ícone da Tecnologia padrão do projeto -->
-                            <figure class="project-image">
-                                <img src="./assets/icons/languages/github.svg" alt="Ícone do GitHub">
-                            </figure>
-
-                            <!-- Conteúdo do Projeto -->
-                            <div class="project-content">
-                                <h3>Projeto GitHub</h3>
-                                <p>Projeto desenvolvido no GitHub</p>
-
-                                <!-- Tags do Projeto -->
-                                <div class="project-tags">
-                                    <span class="tag">GitHub</span>
-                                </div>
-
-                                <!-- Links do Projeto -->
-
-                                <div class="project-buttons">
-                                    <a href="#" target="_blank" class="botao botao-sm">
-                                        GitHub
-                                    </a>
-                                    <a href="#" target="_blank" class="botao-outline botao-sm">
-                                        Deploy
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </article>
-                    </figure>
                 </div>
                 <!-- Botões de Navegação -->
                 <div class="swiper-button-next"></div>
@@ -192,7 +169,11 @@
             </article>
 
             <!-- Formulário de Contato -->
-            <form id="formulario">
+            <form id="formulario" action="https://formsubmit.co/3d344f03a3935432fa5fc0c76e14fb3f" method="POST">
+
+                <input type="hidden" name="_next" value="http://localhost:5500/success.html">
+                <input type="hidden" name="_captcha" value="false">
+
                 <label for="nome">Nome</label>
                 <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
                 <span id="erro-nome"></span>
@@ -215,13 +196,19 @@
 
         </section>
 
-
     </main>
 
     <!-- Rodapé da página -->
     <footer>
         <p>Desenvolvido por <span class="footer-credit">Jeaninny Teixeira</span></p>
     </footer>
+
+    <!-- SWIPER JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script JavaScript principal da página-->
+     <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
