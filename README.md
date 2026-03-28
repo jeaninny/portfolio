@@ -1,140 +1,3 @@
-# ===== NODE.JS =====
-
-node_modules/
-
-npm-debug.log*
-
-yarn-debug.log*
-
-yarn-error.log*
-
-package-lock.json
-
-yarn.lock
- 
-# ===== TESTES =====
-
-coverage/
-
-.nyc_output/
-
-*.test.js.snap
- 
-# ===== EDITORES / IDEs =====
-
-# VS Code
-
-.vscode/
-
-*.code-workspace
-
-.history/
-
-*.vsix
- 
-# IntelliJ IDEA
-
-.idea/
-
-*.iml
- 
-# Sublime Text
-
-*.sublime-project
-
-*.sublime-workspace
- 
-# Atom
-
-.atom/
- 
-# ===== SISTEMA OPERACIONAL =====
-
-# macOS
-
-.DS_Store
-
-.AppleDouble
-
-.LSOverride
-
-._*
- 
-# Windows
-
-Thumbs.db
-
-Thumbs.db:encryptable
-
-ehthumbs.db
-
-Desktop.ini
- 
-# Linux
-
-*~
-
-.directory
- 
-# ===== TEMPORÁRIOS =====
-
-*.tmp
-
-*.temp
-
-*.log
-
-*.swp
-
-*.swo
-
-*~
- 
-# ===== BUILDS / DIST =====
-
-dist/
-
-build/
-
-*.min.js
-
-*.min.css
- 
-# ===== ENVIRONMENT =====
-
-.env
-
-.env.local
-
-.env.development.local
-
-.env.test.local
-
-.env.production.local
- 
-# ===== CACHE =====
-
-.cache/
-
-.parcel-cache/
-
-.eslintcache
- 
-# ===== OUTROS =====
-
-# Backup files
-
-*.bak
-
-*.backup
- 
-# Arquivos de configuração local
-
-config.local.js
- 
-# Projeto Portfólio Pessoal
- 
----
  
 <div align="center"> 
 <img src="https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5" alt="HTML Badge" /> 
@@ -248,7 +111,7 @@ Para executar o projeto em ambiente local, siga os passos abaixo.
  
    ```bash
 
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/jeaninny/portfolio
 
    ```
  
@@ -256,7 +119,7 @@ Para executar o projeto em ambiente local, siga os passos abaixo.
  
    ```bash
 
-   cd seu-repositorio
+   cd portfolio
 
    ```
  
@@ -278,11 +141,10 @@ O site será aberto no navegador e todas as alterações poderão ser visualizad
  
 Este site está disponível publicamente através do **GitHub Pages**. Você pode acessar a versão online pelo link abaixo:
  
-🔗 https://seu-usuario.github.io/seu-repositorio
+🔗 https://jeaninny.github.io/portfolio
  
 ------
  
 ## Contribuições
  
 Contribuições são bem-vindas. Caso tenha sugestões de melhorias, correções ou novas funcionalidades, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**.
- 
