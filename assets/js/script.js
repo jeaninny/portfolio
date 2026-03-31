@@ -62,10 +62,15 @@ async function getAboutGitHub() {
 async function getProjectsGitHub() {
     try {
         // Requisição do tipo GET para a API do GitHub
-        const resposta = await fetch("https://api.github.com/users/jeaninny/repos");        
+        const resposta = await fetch("https://api.github.com/users/jeaninny/repos");
+        const respostaRepOrgJs13 = await fetch("https://api.github.com/users/grupo6-js13/repos")        
 
         // Converter a Resposta para JSON
         const repositorios = await resposta.json();
+        const repositoriosRepOrgJs13 = await respostaRepOrgJs13.json();
+
+        // Combina os dois arrays em um só
+        const todosRepositorios = [...repositorios, ...repositoriosRepOrgJs13];
 
         // Selecionar repositórios específicos pelos IDs dos repositórios desejados
         const repositoriosEscolhidos = [
@@ -75,13 +80,15 @@ async function getProjectsGitHub() {
             1152808978, //projeto farmácia
             1154494885, //projeto final bloco_01 ecommerce
             1184299032, //projeto final bloco_02 farmácia
+            1185414079, //projeto app fitness em grupo
+            1179848380, //projeto corrida compartilhada em grupo
+            1173898802 //projeto aplicação de rh em grupo
         ];
         
         // Filtrar os repositórios
-        const reposFiltrados = repositorios.filter(repo =>
+        const reposFiltrados = todosRepositorios.filter(repo =>
             repositoriosEscolhidos.includes(repo.id)
         );
-
 
         swiperWrapper.innerHTML = "";
 

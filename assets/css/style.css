@@ -721,7 +721,7 @@ header a:hover {
     gap: var(--spacing-xl);    
 }
 
-.social-icon {
+.social-icon {    
     position: relative;
     isolation: isolate;    
     width: 5rem;
@@ -734,6 +734,7 @@ header a:hover {
 
 .social-icon img {
     width: 100%;
+    object-fit: contain;
     filter: brightness(0) saturate(100%) invert(63%) sepia(45%) saturate(800%) 
             hue-rotate(280deg) brightness(105%);
     transition: filter 0.3s ease;    
