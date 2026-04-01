@@ -192,7 +192,7 @@ function iniciarSwiper() {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 40,
-                centeredSlides: false
+                centeredSlides: false,                
             },
             769: { 
                 slidesPerView: 2,
@@ -214,7 +214,7 @@ function iniciarSwiper() {
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            dynamicBullets: true,
+            dynamicBullets: false,
         },
         autoplay: {
             delay: 5000,
