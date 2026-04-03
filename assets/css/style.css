@@ -76,7 +76,7 @@
     --bg-grid-size: 48px 48px;
 
     /* Efeitos de Iluminação */
-    --glow-top: radial-gradient(ellipse at 50% 0%, rgba(160, 50, 90, 0.15) 0%, transparent 70%);
+    --glow-top: radial-gradient(ellipse at 50% 0%, rgba(160, 50, 90, 0.07) 0%, transparent 70%);
 
     /* Fundos Semitransparentes */
     --bg-header: rgba(17, 10, 26, 0.85);
@@ -134,12 +134,24 @@ body {
 
 body::before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 50%;
     background: var(--glow-top);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 5%, rgba(196, 132, 154, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 50%, rgba(124, 143, 212, 0.04) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 70%, rgba(107, 54, 200, 0.04) 0%, transparent 40%);
     pointer-events: none;
     z-index: 0;
 }
@@ -344,10 +356,34 @@ header a:hover {
 
 /* Usa Animação */
 .float-animation {
-    animation: float 3s ease-in-out infinite;
+    animation: none;
+    transition: transform 0.4s ease;
+
 }
 
+.float-animation:hover {
+    transform: translateY(-0.3rem);
+}
+
+
 /* Seção About */
+
+#about {
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 40%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(196, 132, 154, 0.09) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .about-container {
     position: relative;
     display: flex;
@@ -355,27 +391,19 @@ header a:hover {
     align-items: center;
     column-gap: var(--spacing-2xl);
     row-gap: var(--spacing-md);
-    background-color: rgba(17, 10, 26, 0.95);
+    background-color: transparent;
     margin: var(--spacing-2xl) auto;
     background-image: none;
     border-radius: var(--radius-lg);
     border: none;
 }
 
-.about-container::before {
-    content: '';
-    position: absolute;
-    inset: -0.15rem;
-    border-radius: var(--radius-lg);
-    background: var(--border-gradient);
-    z-index: -1;
-}
 
 .about-content pre {
     margin: 0;
-    background: rgba(17, 10, 26, 0.95);
-    padding: 1.5rem;
-    border-radius: 1rem;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--omni-fg);
@@ -393,21 +421,10 @@ header a:hover {
 /* Estilização do código dentro da Seção About */
 
 /* Syntax Highlighting - Seção About */
-.keyword {
-    color: var(--omni-pink);
-}
-
-.variable {
-    color: var(--omni-fg);
-}
-
-.property {
-    color: var(--omni-cyan);
-}
-
-.string {
-    color: var(--omni-yellow);
-}
+.keyword  { color: #FF79C6; }
+.variable { color: #F8F8F2; }
+.property { color: #8BE9FD; }
+.string   { color: #F1FA8C; }
 
 .code-container::after {
     content: "";
@@ -415,53 +432,84 @@ header a:hover {
     inset: 0;
     border-radius: 1rem;
     pointer-events: none;
-    box-shadow: inset 0 0 30px rgba(107, 54, 200, 0.08);
+    box-shadow: inset 0 0 20px rgba(107, 54, 200, 0.04);
 }
 
 .code-container {
     position: relative;
     max-width: 100%;
-    background: linear-gradient(180deg,
-            #0b0514,
-            #140a24);
-    border: 1px solid rgba(139, 34, 82, 0.4);
+    background: rgba(20, 12, 35, 0.15);
     border-radius: 1rem;
     overflow: hidden;
     box-shadow:
-        0 0 0 1px rgba(139, 34, 82, 0.2),
-        0 0 25px rgba(139, 34, 82, 0.3),
-        0 0 50px rgba(255, 121, 198, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        0 0 10px rgba(139, 34, 82, 0.08),
+        0 0 40px rgba(196, 132, 154, 0.04);
+        
+    padding: 1px;
+    background-clip: padding-box;
+    backdrop-filter: blur(8px);
 }
+
+.code-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(135deg,
+        rgba(255, 121, 198, 0.9) 0%,
+        rgba(255, 121, 198, 0.4) 15%,
+        rgba(196, 132, 154, 0.15) 40%,
+        rgba(107, 54, 200, 0.08) 70%,
+        transparent 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
 
 .code-container pre {
     font-family: 'Fira Code', monospace;
-    padding: 1.5rem;
+    background: transparent;
+    padding: 2rem 2rem 2rem 1.75rem;
     font-size: 1.15rem;
     line-height: 2rem;
     white-space: pre;
     overflow-x: auto;
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.6),
-        0 0 20px rgba(139, 34, 82, 0.15);
+    box-shadow: none;
 }
 
 .code-header {
-    height: 2rem;
-    background: linear-gradient(90deg,
-            rgba(139, 34, 82, 0.5),
-            rgba(107, 54, 200, 0.5));
-    backdrop-filter: blur(8px);
+    height: 2.5rem;
+    background: rgba(20, 12, 35, 0.6);
     display: flex;
     align-items: center;
-    padding-left: 0.75rem;
+    padding-left: 1rem;
+    gap: 0.4rem;
+    border-bottom: 2px solid rgba(255, 121, 198, 0.2);
+    box-shadow: 0 1px 8px rgba(255, 121, 198, 0.12);
 }
 
 .code-header::before {
-    content: "● ● ●";
-    color: var(--omni-pink);
-    letter-spacing: 0.4rem;
+    content: none;
 }
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+}
+
+.dot-1 { background-color: #e07090; box-shadow: 0 0 6px rgba(224, 112, 144, 0.6); }
+.dot-2 { background-color: #c47a95; box-shadow: 0 0 6px rgba(196, 122, 149, 0.4); }
+.dot-3 { background-color: #a85478; box-shadow: 0 0 6px rgba(168, 84, 120, 0.3); }
 
 
 .about-image {
@@ -527,6 +575,22 @@ header a:hover {
 }
 
 /* Projects */
+
+#projects {
+    position: relative;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -5%;
+    width: 35%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(196, 132, 154, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
 
 .projects-container {
     scroll-margin-top: 3rem;
@@ -672,7 +736,7 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;    
+    gap: 0.75rem;
     margin-top: auto;
 }
 
@@ -1031,6 +1095,7 @@ footer::before {
         gap: var(--spacing-md);
         margin: var(--spacing-lg);
         padding: var(--spacing-lg);
+        z-index: 1;
     }
 
     .about-image {
@@ -1278,12 +1343,12 @@ footer::before {
 
     /* Terminal const profile */
     .code-container pre {
-        font-size: 0.75rem;
-        line-height: 1.4rem;
+        font-size: 0.95rem;
+        line-height: 1.7rem;
         white-space: pre-wrap;
         overflow-wrap: anywhere;
         overflow-x: hidden;
-        padding: 0.75rem;
+        padding: 1.5rem;
         text-align: left;
         font-family: 'Fira Code', monospace;
     }
@@ -1307,7 +1372,7 @@ footer::before {
 
     .projects-swiper {
         position: relative;
-        margin: 0;        
+        margin: 0;
         padding-bottom: 3.5rem;
         overflow: visible;
     }

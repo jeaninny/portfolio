@@ -88,20 +88,28 @@
             <!-- Conteúdo da Seção About -->
             <article class="about-content">                
 <div class="code-container">
-    <div class="code-header"></div>
+    <div class="code-header">
+    <span class="dot dot-1"></span>
+    <span class="dot dot-2"></span>
+    <span class="dot dot-3"></span>
+    </div>
 <pre><code><span class="keyword">const</span> <span class="variable">profile</span> = {
     <span class="property">firstName</span>: '<span class="string">Jeaninny</span>',
     <span class="property">lastName</span>: '<span class="string">Teixeira</span>',
-    <span class="property">role</span>: '<span class="string">Full-Stack Junior Developer</span>',
-    <span class="property">skills</span>: ['<span class="string">JavaScript</span>', '<span class="string">TypeScript</span>', '<span class="string">Java</span>',
-    '<span class="string">Node.js</span>', '<span class="string">NestJS</span>', '<span class="string">React</span>',
-    '<span class="string">SQL</span>', '<span class="string">MySQL</span>', '<span class="string">Postgres</span>'],
+    <span class="property">role</span>: '<span class="string">Desenvolvedora Full-Stack Júnior</span>',
+    <span class="property">currently</span>: ['<span class="string">Bootcamp Full Stack JavaScript - Generation Brasil</span>',
+                '<span class="string">Análise e Desenvolvimento de Sistemas</span>'],
+    <span class="property">skills</span>: ['<span class="string">JavaScript</span>', '<span class="string">TypeScript</span>', '<span class="string">Java</span>', '<span class="string">Node.js</span>', '<span class="string">NestJS</span>',
+               '<span class="string">React</span>', '<span class="string">SQL</span>', '<span class="string">MySQL</span>', '<span class="string">PostgreSQL</span>'],
     <span class="property">tools</span>: ['<span class="string">Git</span>', '<span class="string">GitHub</span>', '<span class="string">Insomnia</span>'],
     <span class="property">certifications</span>: ['<span class="string">AWS Cloud Practitioner</span>'],
-    <span class="property">softSkills</span>: ['<span class="string">Teamwork</span>', '<span class="string">Communication</span>', '<span class="string">Analytical Thinking</span>'],
-    <span class="property">languages</span>: ['<span class="string">Portuguese</span>', '<span class="string">English</span>', '<span class="string">French</span>'],
-    <span class="property">interests</span>: ['<span class="string">Coffee ☕</span>', '<span class="string">Cats 🐱</span>', '<span class="string">Cozy Breakfasts 🥐</span>', '<span class="string">Music 🎵</span>',
-              '<span class="string">Cooking 👩🏻‍🍳</span>', '<span class="string">Harry Potter ⚡</span>', '<span class="string">Sleeping 😴</span>']
+    <span class="property">softSkills</span>: ['<span class="string">Trabalho em equipe</span>', '<span class="string">Comunicação</span>', '<span class="string">Pensamento analítico</span>'],
+    <span class="property">languages</span>: ['<span class="string">Português</span>', '<span class="string">Inglês</span>', '<span class="string">Francês</span>'],
+    <span class="property">interests</span>: ['<span class="string">Café ☕</span>', '<span class="string">Gatos 🐱</span>', '<span class="string">Música 🎵</span>',
+                '<span class="string">Culinária 👩🏻‍🍳</span>', '<span class="string">Harry Potter ⚡</span>'],
+    <span class="property">getSkills</span>() {
+        <span class="keyword">return</span> `Skills: ${<span class="keyword">this</span>.<span class="property">skills</span>.join(', ')}`;
+    }
 };</code></pre>
 </div>
 
