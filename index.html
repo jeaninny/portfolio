@@ -9,7 +9,7 @@
 
     <!-- Fonte do Google - Nunito -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jeaninny Teixeira">
@@ -20,7 +20,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
 
     <!-- SWIPER CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- CSS principal da página -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -55,10 +55,11 @@
         <section id="hero" class="section-container hero-container">
 
             <!-- Boas Vindas -->
-            <article class="hero-content">                
+            <article class="hero-content">
                 <h1>Olá,
                     <br>Sou a <span class="hero-greeting">Jeaninny Teixeira</span>,
-                    <br>desenvolvedora <span class="hero-role">Full-Stack Júnior</span></h1>
+                    <br>desenvolvedora <span class="hero-role">Full-Stack Júnior</span>
+                </h1>
                 <p>Código limpo, soluções práticas e vontade de evoluir todo dia.</p>
 
                 <div class="buttons-container">
@@ -76,21 +77,43 @@
         <!-- Seção About -->
         <section id="about" class="section-container about-container">
             <h2>Sobre mim</h2>
-            
-                    <!-- Imagem da Seção About -->
-            <figure class="about-image">
-                <img id="about-avatar" src="" alt="">
-            </figure>
+
+            <div class="about-left">
+                <figure class="about-image">
+                    <img id="about-avatar" src="" alt="">
+                </figure>
+
+                <div class="data-container">
+                    <div class="data-item">
+                        <span id="followers" class="data-number"></span>
+                        <span class="data-label">Seguidores</span>
+                    </div>
+                    <div class="data-item">
+                        <span id="repos" class="data-number"></span>
+                        <span class="data-label">Repositórios</span>
+                    </div>
+                </div>
+                <!-- Links (GitHub + Currículo) e Dados do GitHub -->
+                <!-- Links -->
+                <div class="buttons-container about-left-buttons">
+                    <a id="about-github" target="_blank" class="botao">GitHub</a>
+                    <a href="https://drive.google.com/file/d/1_G_npGe31MKSkaul-6CBTwfHtCBeG0ws/view?usp=sharing"
+                        target="_blank" class="botao-outline">Currículo</a>
+                </div>
+
+
+            </div>
+
 
             <!-- Conteúdo da Seção About -->
-            <article class="about-content">                
-<div class="code-container">
-    <div class="code-header">
-    <span class="dot dot-1"></span>
-    <span class="dot dot-2"></span>
-    <span class="dot dot-3"></span>
-    </div>
-<pre><code><span class="keyword">const</span> <span class="variable">profile</span> = {
+            <article class="about-content">
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="dot dot-1"></span>
+                        <span class="dot dot-2"></span>
+                        <span class="dot dot-3"></span>
+                    </div>
+                    <pre><code><span class="keyword">const</span> <span class="variable">profile</span> = {
     <span class="property">firstName</span>: '<span class="string">Jeaninny</span>',
     <span class="property">lastName</span>: '<span class="string">Teixeira</span>',
     <span class="property">role</span>: '<span class="string">Desenvolvedora Full-Stack Júnior</span>',
@@ -111,32 +134,8 @@
         <span class="keyword">return</span> `Skills: ${<span class="keyword">this</span>.<span class="property">skills</span>.join(', ')}`;
     }
 };</code></pre>
-</div>
-
-                <!-- Links (GitHub + Currículo) e Dados do GitHub -->
-                <div class="about-buttons-data">
-                    <!-- Links -->
-                    <div class="buttons-container">
-                        <a id="about-github" target="_blank" class="botao">GitHub</a>
-                        <a href="https://drive.google.com/file/d/1_G_npGe31MKSkaul-6CBTwfHtCBeG0ws/view?usp=sharing" target="_blank" class="botao-outline">Currículo</a>
-                    </div>
-
-                    <!-- Dados -->
-                    <div class="data-container">
-                        <!-- Seguidores -->
-                        <div class="data-item">
-                            <span id="followers" class="data-number"></span>
-                            <span class="data-label">Seguidores</span>
-                        </div>
-                        <!-- Repositórios Públicos -->
-                        <div class="data-item">
-                            <span id="repos" class="data-number"></span>
-                            <span class="data-label">Repositórios</span>
-                        </div>
-                    </div>
-
                 </div>
-            </article>            
+            </article>
         </section>
 
         <!-- Seção Projects -->
@@ -176,8 +175,7 @@
                         <img src="./assets/icons/social/github.svg" alt="Link para o GitHub">
                     </a>
 
-                    <a href="mailto:jeaninny.teixeira@gmail.com" class="social-icon"
-                        aria-label="E-mail">
+                    <a href="mailto:jeaninny.teixeira@gmail.com" class="social-icon" aria-label="E-mail">
                         <img src="./assets/icons/social/email.svg" alt="Link para o E-mail">
                     </a>
 
@@ -220,10 +218,10 @@
     </footer>
 
     <!-- SWIPER JS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Script JavaScript principal da página-->
-     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
