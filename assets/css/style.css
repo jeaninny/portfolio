@@ -118,6 +118,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -130,6 +131,7 @@ body {
     background-size: var(--bg-grid-size);
     line-height: 1.6;
     color: var(--white);
+    overflow-x: hidden;
 }
 
 body::before {
@@ -140,18 +142,6 @@ body::before {
     right: 0;
     height: 50%;
     background: var(--glow-top);
-    pointer-events: none;
-    z-index: 0;
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 50% 5%, rgba(196, 132, 154, 0.07) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 50%, rgba(124, 143, 212, 0.04) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 70%, rgba(107, 54, 200, 0.04) 0%, transparent 40%);
     pointer-events: none;
     z-index: 0;
 }
@@ -375,11 +365,11 @@ header a:hover {
 #about::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: -10%;
-    width: 40%;
-    height: 60%;
-    background: radial-gradient(ellipse, rgba(196, 132, 154, 0.09) 0%, transparent 70%);
+    top: 40%;
+    left: 5%;
+    width: 20%;
+    height: 30%;
+    background: radial-gradient(ellipse, rgba(196, 132, 154, 0.10) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -402,7 +392,7 @@ header a:hover {
 .about-content pre {
     margin: 0;
     background: transparent;
-    padding: 0;
+    padding: 1.5rem;
     border-radius: 0;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -421,10 +411,21 @@ header a:hover {
 /* Estilização do código dentro da Seção About */
 
 /* Syntax Highlighting - Seção About */
-.keyword  { color: #FF79C6; }
-.variable { color: #F8F8F2; }
-.property { color: #8BE9FD; }
-.string   { color: #F1FA8C; }
+.keyword {
+    color: #FF79C6;
+}
+
+.variable {
+    color: #F8F8F2;
+}
+
+.property {
+    color: #8BE9FD;
+}
+
+.string {
+    color: #F1FA8C;
+}
 
 .code-container::after {
     content: "";
@@ -444,7 +445,7 @@ header a:hover {
     box-shadow:
         0 0 10px rgba(139, 34, 82, 0.08),
         0 0 40px rgba(196, 132, 154, 0.04);
-        
+
     padding: 1px;
     background-clip: padding-box;
     backdrop-filter: blur(8px);
@@ -457,11 +458,11 @@ header a:hover {
     border-radius: 1rem;
     padding: 1px;
     background: linear-gradient(135deg,
-        rgba(255, 121, 198, 0.9) 0%,
-        rgba(255, 121, 198, 0.4) 15%,
-        rgba(196, 132, 154, 0.15) 40%,
-        rgba(107, 54, 200, 0.08) 70%,
-        transparent 100%);
+            rgba(255, 121, 198, 0.9) 0%,
+            rgba(255, 121, 198, 0.4) 15%,
+            rgba(196, 132, 154, 0.15) 40%,
+            rgba(107, 54, 200, 0.08) 70%,
+            transparent 100%);
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -475,8 +476,7 @@ header a:hover {
 }
 
 
-.code-container pre {
-    font-family: 'Fira Code', monospace;
+.code-container pre {    
     background: transparent;
     padding: 2rem 2rem 2rem 1.75rem;
     font-size: 1.15rem;
@@ -484,6 +484,13 @@ header a:hover {
     white-space: pre;
     overflow-x: auto;
     box-shadow: none;
+}
+
+.code-container pre,
+.code-container code,
+.code-container pre span {
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .code-header {
@@ -507,14 +514,25 @@ header a:hover {
     border-radius: 50%;
 }
 
-.dot-1 { background-color: #e07090; box-shadow: 0 0 6px rgba(224, 112, 144, 0.6); }
-.dot-2 { background-color: #c47a95; box-shadow: 0 0 6px rgba(196, 122, 149, 0.4); }
-.dot-3 { background-color: #a85478; box-shadow: 0 0 6px rgba(168, 84, 120, 0.3); }
+.dot-1 {
+    background-color: #e07090;
+    box-shadow: 0 0 6px rgba(224, 112, 144, 0.6);
+}
+
+.dot-2 {
+    background-color: #c47a95;
+    box-shadow: 0 0 6px rgba(196, 122, 149, 0.4);
+}
+
+.dot-3 {
+    background-color: #a85478;
+    box-shadow: 0 0 6px rgba(168, 84, 120, 0.3);
+}
 
 
 .about-image {
     flex: 0 0 17.5rem;
-    margin-left: 1rem;
+    margin-left: rem;
 }
 
 .about-image img {
@@ -580,18 +598,6 @@ header a:hover {
     position: relative;
 }
 
-#projects::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    right: -5%;
-    width: 35%;
-    height: 50%;
-    background: radial-gradient(ellipse, rgba(196, 132, 154, 0.06) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-}
-
 .projects-container {
     scroll-margin-top: 3rem;
     margin: var(--spacing-2xl) auto;
@@ -614,8 +620,8 @@ header a:hover {
     height: 100%;
     border: none;
     border-radius: var(--radius-lg);
-    background: rgba(17, 10, 26, 0.6);
-    backdrop-filter: blur(12px);
+    background: rgba(20, 12, 35, 0.4);
+    backdrop-filter: none;
     overflow: hidden;
     transition: var(--transition-default);
     position: relative;
@@ -628,8 +634,8 @@ header a:hover {
     inset: -0.1rem;
     border-radius: var(--radius-lg);
     background: linear-gradient(90deg,
-            rgba(139, 34, 82, 0.3),
-            rgba(107, 54, 200, 0.3));
+            rgba(139, 34, 82, 0.15),
+            rgba(107, 54, 200, 0.15));
     z-index: -1;
 }
 
@@ -646,12 +652,12 @@ header a:hover {
     align-items: center;
     width: 100%;
     height: 6rem;
-    background-color: rgba(34, 7, 44, 0.8);
-    border-bottom: 0.1rem solid var(--rose-700);
+    background-color: rgba(20, 12, 35, 0.3);
+    border-bottom: 1px solid rgba(196, 132, 154, 0.12);
 }
 
 .project-image::after {
-    content: "";
+    content: none;
     position: absolute;
     width: 70%;
     height: 70%;
@@ -672,10 +678,16 @@ header a:hover {
     max-width: 4rem;
     max-height: 4rem;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(63%) sepia(45%) saturate(800%) hue-rotate(280deg) brightness(105%);
     opacity: 0.9;
     transition: var(--transition-default);
+    filter: brightness(0) saturate(100%) invert(63%) sepia(45%) saturate(800%) hue-rotate(280deg) brightness(105%);
+}
 
+.social-icon img {
+    width: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(63%) sepia(45%) saturate(800%) hue-rotate(280deg) brightness(90%);
 }
 
 .project-card:hover .project-image img {
@@ -727,9 +739,9 @@ header a:hover {
     border-radius: var(--radius-sm);
     font-size: var(--text-sm);
     font-weight: 600;
-    background: rgba(139, 34, 82, 0.15);
-    border: 1px solid rgba(139, 34, 82, 0.4);
-    color: var(--rose-200);
+    background: transparent;
+    border: 1px solid rgba(168, 84, 120, 0.25);
+    color: var(--rose-300);
 }
 
 .project-buttons {
@@ -839,7 +851,7 @@ header a:hover {
 .social-icon img {
     width: 100%;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(63%) sepia(45%) saturate(800%) hue-rotate(280deg) brightness(105%);
+    filter: brightness(0) saturate(100%) invert(72%) sepia(40%) saturate(600%) hue-rotate(285deg) brightness(110%);
     transition: filter 0.3s ease;
 }
 
@@ -925,7 +937,7 @@ footer::before {
 
 .footer-credit {
     font-weight: 700;
-    color: var(--omni-green);
+    color: var(--omni-pink);
 }
 
 /* Footer */
@@ -1133,11 +1145,10 @@ footer::before {
     .code-container pre {
         font-size: 0.65rem;
         line-height: 1.3rem;
-        white-space: pre;
+        white-space: pre-wrap;
         overflow-x: auto;
         padding: 0.75rem;
-        text-align: left;
-        /* ← força alinhamento à esquerda */
+        text-align: left;        
     }
 
     /* Projects */
@@ -1156,6 +1167,7 @@ footer::before {
         min-height: 30rem;
         max-height: 30rem;
         max-width: 100%;
+        background: rgba(15, 10, 25, 0.5);
     }
 
     .project-content {
@@ -1244,16 +1256,24 @@ footer::before {
         font-size: var(--text-base);
     }
 
-    .section-container span {
-        font-size: var(--text-lg);
-    }
+    .hero-content span {
+    font-size: var(--text-xl);
+}
 
     /* Header */
     #titulo {
         font-size: var(--text-xl);
     }
 
+    header {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
     .menu-content {
+        width: 100%;
+        padding: 0 var(--spacing-sm);
         justify-content: center;
     }
 
@@ -1342,27 +1362,31 @@ footer::before {
     }
 
     /* Terminal const profile */
+
+    .code-container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
     .code-container pre {
-        font-size: 0.95rem;
-        line-height: 1.7rem;
+        font-size: 0.80rem;
+        line-height: 1.3rem;
         white-space: pre-wrap;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
         overflow-x: hidden;
-        padding: 1.5rem;
-        text-align: left;
-        font-family: 'Fira Code', monospace;
+        padding: 0.5rem 0.75rem;
     }
 
     .code-header {
-        height: 1.5rem;
+        height: 1.2rem;
         padding-left: 0.5rem;
     }
 
-    .code-header::before {
-        font-size: 0.6rem;
-        letter-spacing: 0.2rem;
+    .dot {
+        width: 0.4rem;
+        height: 0.4rem;
     }
-
 
     /* Projects */
 
@@ -1397,13 +1421,14 @@ footer::before {
     }
 
     .project-content p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     .tag {
         padding: 0.15rem 0.4rem;
         font-size: 0.7rem;
-        font-weight: 500;
+        font-weight: 400;
+        padding: 0.15rem 0.4rem;
     }
 
     /* Contatos */
