@@ -2,225 +2,259 @@
 <html lang="pt-br">
 
 <head>
-
-    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Fonte do Google - Nunito -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jeaninny Teixeira">
-    <meta name="description" content="Portfólio da Jeaninny Teixeira,
-                    desenvolvedora Full Stack Júnior com foco em TypeScript, Node.js e AWS.
-                    Conheça meus projetos e entre em contato.">
+    <meta name="description"
+        content="Portfólio da Jeaninny Teixeira, desenvolvedora Full Stack Júnior com foco em TypeScript, Node.js e AWS. Conheça meus projetos e entre em contato.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-
-    <!-- SWIPER CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <!-- CSS principal da página -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <title>Portfólio da Jeaninny</title>
+    <title>Jeaninny Teixeira — Desenvolvedora Full-Stack</title>
 </head>
 
 <body>
 
-    <!-- Cabeçalho da página -->
+    <div class="amb" aria-hidden="true"></div>
+
     <header>
-        <div class="menu-content">
-
-            <!-- Título do Cabeçalho -->
-            <a href="index.html" id="titulo">Portfólio</a>
-
-            <!-- Menu de Navegação -->
+        <div class="hdr">
             <nav>
                 <ul class="menu-list">
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact">Contatos</a></li>
+                    <li><a href="#hero">início</a></li>
+                    <li><a href="#about">sobre</a></li>
+                    <li><a href="#projects">projetos</a></li>
+                    <li><a href="#contact">contato</a></li>
                 </ul>
             </nav>
+
+            <!-- Botão hamburguer — só aparece no mobile -->
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Menu mobile -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#hero">início</a></li>
+                <li><a href="#about">sobre</a></li>
+                <li><a href="#projects">projetos</a></li>
+                <li><a href="#contact">contato</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Seção Principal da página -->
     <main>
-        <!-- Seção Hero -->
-        <section id="hero" class="section-container hero-container">
 
-            <!-- Boas Vindas -->
-            <article class="hero-content">
-                <h1>Olá,
-                    <br>Sou a <span class="hero-greeting">Jeaninny Teixeira</span>,
-                    <br>desenvolvedora <span class="hero-role">Full-Stack Júnior</span>
-                </h1>
-                <p>Código limpo, soluções práticas e vontade de evoluir todo dia.</p>
+        <!-- Hero -->
+        <section id="hero">
+            <div class="section-wrap hero-wrap">
 
-                <div class="buttons-container">
-                    <a href="#contact" class="botao">Entre em contato</a>
-                    <a href="#about" class="botao-outline">Saiba mais</a>
-                </div>
-            </article>
+                <article class="hero-left">
+                    <h1>
+                        Olá, sou a<br>
+                        <strong><span class="c-rose">Jeaninny Teixeira. </span></strong><br>
+                        Desenvolvedora <span class="c-ind">full-stack</span> júnior
+                    </h1>
 
-            <!-- Imagem da Seção Hero -->
-            <figure class="hero-image">
-                <img src="./assets/img/dev-avatar.png" alt="Foto da autora do site" class="float-animation">
-            </figure>
-        </section>
-
-        <!-- Seção About -->
-        <section id="about" class="section-container about-container">
-            <h2>Sobre mim</h2>
-
-            <div class="about-left">
-                <figure class="about-image">
-                    <img id="about-avatar" src="" alt="">
-                </figure>
-
-                <div class="data-container">
-                    <div class="data-item">
-                        <span id="followers" class="data-number"></span>
-                        <span class="data-label">Seguidores</span>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn-p">Entre em contato</a>
+                        <a href="#about" class="btn btn-g">Saiba mais</a>
                     </div>
-                    <div class="data-item">
-                        <span id="repos" class="data-number"></span>
-                        <span class="data-label">Repositórios</span>
-                    </div>
-                </div>
-                <!-- Links (GitHub + Currículo) e Dados do GitHub -->
-                <!-- Links -->
-                <div class="buttons-container about-left-buttons">
-                    <a id="about-github" target="_blank" class="botao">GitHub</a>
-                    <a href="https://drive.google.com/file/d/1_G_npGe31MKSkaul-6CBTwfHtCBeG0ws/view?usp=sharing"
-                        target="_blank" class="botao-outline">Currículo</a>
-                </div>
+                </article>
 
+                <div class="hero-right">
+                    <div id="lottie-container" class="lottie-wrap" aria-hidden="true"></div>
 
-            </div>
-
-
-            <!-- Conteúdo da Seção About -->
-            <article class="about-content">
-                <div class="code-container">
-                    <div class="code-header">
-                        <span class="dot dot-1"></span>
-                        <span class="dot dot-2"></span>
-                        <span class="dot dot-3"></span>
-                    </div>
-                    <pre><code><span class="keyword">const</span> <span class="variable">profile</span> = {
-    <span class="property">firstName</span>: '<span class="string">Jeaninny</span>',
-    <span class="property">lastName</span>: '<span class="string">Teixeira</span>',
-    <span class="property">role</span>: '<span class="string">Desenvolvedora Full-Stack Júnior</span>',
-    <span class="property">currently</span>: ['<span class="string">Bootcamp Full Stack JS - Generation Brasil</span>',
-        '<span class="string">Análise e Desenvolvimento de Sistemas</span>'],
-    <span class="property">skills</span>: ['<span class="string">JavaScript</span>', '<span class="string">TypeScript</span>', '<span class="string">Java</span>',
-        '<span class="string">Node.js</span>', '<span class="string">NestJS</span>', '<span class="string">React</span>',
-        '<span class="string">SQL</span>', '<span class="string">MySQL</span>', '<span class="string">PostgreSQL</span>'],
-    <span class="property">tools</span>: ['<span class="string">Git</span>', '<span class="string">GitHub</span>', '<span class="string">Insomnia</span>'],
-    <span class="property">certifications</span>: ['<span class="string">AWS Cloud Practitioner</span>'],
-    <span class="property">softSkills</span>: ['<span class="string">Trabalho em equipe</span>', '<span class="string">Comunicação</span>',
-        '<span class="string">Pensamento analítico</span>'],
-    <span class="property">languages</span>: ['<span class="string">Português</span>', '<span class="string">Inglês</span>', '<span class="string">Francês</span>'],
-    <span class="property">interests</span>: ['<span class="string">Café ☕</span>', '<span class="string">Gatos 🐱</span>',
-        '<span class="string">Música 🎵</span>', '<span class="string">Culinária 👩🏻‍🍳</span>',
-        '<span class="string">Harry Potter ⚡</span>'],
-    <span class="property">getSkills</span>() {
-        <span class="keyword">return</span> `Skills: ${<span class="keyword">this</span>.<span class="property">skills</span>.join(', ')}`;
-    }
+                    <div class="terminal">
+                        <div class="tbar">
+                            <span class="dot d1"></span>
+                            <span class="dot d2"></span>
+                            <span class="dot d3"></span>
+                        </div>
+                        <pre class="tbody"><code><span class="kw">const</span> <span class="var">profile</span> = {
+  <span class="prop">name</span>: <span class="str">'Jeaninny Teixeira'</span>,
+  <span class="prop">role</span>: <span class="str">'Desenvolvedora Full-Stack Jr'</span>,
+  <span class="prop">origin</span>: <span class="str">'Direito → Tech'</span>,
 };</code></pre>
+                    </div>
                 </div>
-            </article>
-        </section>
-
-        <!-- Seção Projects -->
-        <section id="projects" class="section-container projects-container">
-            <h2>Meus Projetos</h2>
-
-            <!-- Swiper Container -->
-            <div class="swiper projects-swiper">
-                <div class="swiper-wrapper">
-                </div>
-                <!-- Botões de Navegação -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-                <!-- Paginação -->
-                <div class="swiper-pagination"></div>
 
             </div>
         </section>
 
-        <!-- Seção Contact -->
-        <section id="contact" class="section-container contact-container">
+        <!-- About -->
+        <section id="about">
+            <div class="section-wrap about-wrap">
 
-            <!-- Redes Sociais -->
-            <article class="contact-info">
-                <h2>Entre em contato</h2>
-                <p>Sinta-se à vontade para entrar em contato comigo!</p>
+                <aside class="about-sidebar rv">
+                    <figure class="about-avatar">
+                        <img id="about-avatar" src="" alt="Foto de perfil de Jeaninny Teixeira">
+                    </figure>
+                </aside>
 
-                <!-- Links para as Redes Sociais -->
-                <div class="social-container">
-                    <a href="https://www.linkedin.com/in/jeaninnyteixeira/" target="_blank" class="social-icon"
-                        aria-label="LinkedIn">
-                        <img src="./assets/icons/social/linkedin.svg" alt="Link para o LinkedIn">
-                    </a>
+                <div class="about-main">
+                    <div class="slabel">sobre mim</div>
 
-                    <a href="https://github.com/jeaninny/" target="_blank" class="social-icon" aria-label="GitHub">
-                        <img src="./assets/icons/social/github.svg" alt="Link para o GitHub">
-                    </a>
+                    <p class="bio rv">
+                        Sou desenvolvedora full-stack júnior formada no
+                        Bootcamp de Desenvolvimento Full Stack da Generation Brasil.
+                        Possuo projetos em TypeScript, JavaScript, NestJS, Java e Spring Boot,
+                        nos quais construí APIs REST integradas a interfaces React.
+                        Curso Análise e Desenvolvimento de Sistemas na Uninter
+                        e possuo certificação AWS Cloud Practitioner.
+                    </p>
+                    <p class="bio rv d1r">
+                        Antes do código, atuei por 5 anos como advogada. O Direito me ensinou
+                        pensamento analítico, gestão de prazos e comunicação assertiva, habilidades que
+                        aplico no contexto de desenvolvimento de software.
+                    </p>
 
-                    <a href="mailto:jeaninny.teixeira@gmail.com" class="social-icon" aria-label="E-mail">
-                        <img src="./assets/icons/social/email.svg" alt="Link para o E-mail">
-                    </a>
-
+                    <div class="terminal terminal-sm rv d2r">
+                        <div class="tbar">
+                            <span class="dot d1"></span>
+                            <span class="dot d2"></span>
+                            <span class="dot d3"></span>
+                        </div>
+                        <pre class="tbody sm"><code><span class="kw">const</span> <span class="var">about</span> = {
+  <span class="prop">skills</span>: [<span class="str">'JavaScript'</span>, <span class="str">'TypeScript'</span>, <span class="str">'Java'</span>,
+            <span class="str">'Spring Boot'</span>, <span class="str">'Node.js'</span>, <span class="str">'NestJS'</span>,
+            <span class="str">'React'</span>, <span class="str">'REST APIs'</span>, <span class="str">'SQL'</span>,
+            <span class="str">'MySQL'</span>, <span class="str">'PostgreSQL'</span>],
+  <span class="prop">tools</span>: [<span class="str">'Git'</span>, <span class="str">'GitHub'</span>, <span class="str">'Insomnia'</span>],
+  <span class="prop">cert</span>: [<span class="str">'AWS Cloud Practitioner'</span>],
+  <span class="prop">soft</span>: [<span class="str">'Trabalho em equipe'</span>, <span class="str">'Comunicação'</span>,
+          <span class="str">'Pensamento analítico'</span>],
+  <span class="prop">langs</span>: [<span class="str">'Português'</span>, <span class="str">'Inglês'</span>, <span class="str">'Francês'</span>],
+  <span class="prop">interests</span>: [<span class="str">'Café ☕'</span>, <span class="str">'Gatos 🐱'</span>, <span class="str">'Harry Potter ⚡'</span>],
+  <span class="prop">getSkills</span>() {
+    <span class="kw">return</span> <span class="str">`Skills: ${<span class="kw">this</span>.<span class="prop">skills</span>.join(', ')}`</span>;
+  }
+};</code></pre>
+                    </div>
                 </div>
-            </article>
 
-            <!-- Formulário de Contato -->
-            <form id="formulario" action="https://formsubmit.co/3d344f03a3935432fa5fc0c76e14fb3f" method="POST">
+            </div>
+        </section>
 
-                <input type="hidden" name="_next" value="https://jeaninny.github.io/portfolio/success.html">
-                <input type="hidden" name="_captcha" value="false">
+        <!-- Projects -->
+        <section id="projects">
+            <div class="section-wrap">
+                <div class="projects-header">
+                    <div class="slabel">projetos</div>
+                    <div class="projects-controls">
+                        <span id="proj-counter" class="projects-counter"></span>
+                        <div class="nav-btns">
+                            <button id="btn-prev" class="nav-btn" disabled aria-label="Anterior">←</button>
+                            <button id="btn-next" class="nav-btn" aria-label="Próximo">→</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="projects-grid" class="projects-grid"></div>
+            </div>
+        </section>
 
-                <label for="nome">Nome</label>
-                <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
-                <span id="erro-nome"></span>
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-wrap contact-wrap">
 
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="Digite o seu e-mail">
-                <span id="erro-email"></span>
+                <article class="contact-info">
+                    <div class="slabel">contato</div>
+                    <p class="contact-desc">
+                        Se quiser conversar sobre uma vaga, um projeto ou só trocar uma ideia sobre tecnologia, estou
+                        por aqui.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://drive.google.com/file/d/1_G_npGe31MKSkaul-6CBTwfHtCBeG0ws/view?usp=sharing"
+                            target="_blank" class="sc" aria-label="Currículo">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                            Currículo
+                        </a>
+                        <a href="https://www.linkedin.com/in/jeaninnyteixeira/" target="_blank" class="sc"
+                            aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/jeaninny/" target="_blank" class="sc" aria-label="GitHub">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="mailto:jeaninny.teixeira@gmail.com" class="sc" aria-label="E-mail">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="M2 7l10 7 10-7" />
+                            </svg>
+                            E-mail
+                        </a>
+                    </div>
+                </article>
 
-                <label for="assunto">Assunto</label>
-                <input id="assunto" name="assunto" type="text" placeholder="Digite o assunto da mensagem">
-                <span id="erro-assunto"></span>
+                <form id="formulario" action="https://formsubmit.co/3d344f03a3935432fa5fc0c76e14fb3f" method="POST">
+                    <input type="hidden" name="_next" value="https://jeaninny.github.io/portfolio/success.html">
+                    <input type="hidden" name="_captcha" value="false">
 
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem"></textarea>
-                <span id="erro-mensagem"></span>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="nome">Nome</label>
+                            <input id="nome" name="nome" type="text" placeholder="Seu nome completo">
+                            <span id="erro-nome" class="form-error"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" type="email" placeholder="seu@email.com">
+                            <span id="erro-email" class="form-error"></span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="assunto">Assunto</label>
+                        <input id="assunto" name="assunto" type="text" placeholder="Sobre o que você quer falar?">
+                        <span id="erro-assunto" class="form-error"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem..."></textarea>
+                        <span id="erro-mensagem" class="form-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-p btn-full">Enviar mensagem</button>
+                </form>
 
-                <button class="botao" type="submit">Enviar Mensagem</button>
-
-            </form>
-
+            </div>
         </section>
 
     </main>
 
-    <!-- Rodapé da página -->
     <footer>
-        <p>Desenvolvido por <span class="footer-credit">Jeaninny Teixeira</span></p>
+        <p>Desenvolvido por <span class="footer-name">Jeaninny Teixeira</span></p>
     </footer>
 
-    <!-- SWIPER JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Script JavaScript principal da página-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
